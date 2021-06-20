@@ -4,7 +4,8 @@ pipeline {
         //be sure to replace "willbla" with your own Docker Hub username
         DOCKER_IMAGE_NAME = "anat777/train-schedule"
         CANARY_REPLICAS = 0
-    }
+
+  }
     stages {
         stage('Build') {
             steps {
@@ -85,6 +86,7 @@ pipeline {
             }
         }
     }
+
     post {
         cleanup {
             kubernetesDeploy (
@@ -95,3 +97,4 @@ pipeline {
         }
     }
 }}
+
